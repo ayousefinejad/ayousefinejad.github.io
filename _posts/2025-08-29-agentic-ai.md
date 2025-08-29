@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Call chatbot API
     try {
-      const response = await fetch('https://your-chatbot-app-url.com/api/chat', {
+      const response = await fetch('https://zenpower.info/webhook/6872fbd6-b91d-4001-ac3c-da9a13e35069', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg })
