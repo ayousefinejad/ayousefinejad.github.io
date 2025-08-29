@@ -36,38 +36,64 @@ As agentic AI continues to evolve, collaboration between technologists, ethicist
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const WEBHOOK_URL = 'https://zenpower.info/webhook/6872fbd6-b91d-4001-ac3c-da9a13e35069'; // Use production URL
+  const API_URL = 'https://your-backend-url.com/api/process-image'; // Replace with your backend URL
 
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('chat-input');
-  const history = document.getElementById('chat-history');
-  
+  const form = document.getElementById('image-form');
+  const input = document.getElementById('image-input');
+  const status = document.getElementById('image-status');
+  const preview = document.getElementById('image-preview');
+  const result = document.getElementById('image-result');
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const userMsg = input.value;
-    if (!userMsg.trim()) return;
-    
-    // Show user message
-    history.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
-    input.value = '';
-    
-    // Call chatbot API
-    try {
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg })
-      });
-      const data = await response.json();
-      // Adjust according to your API's response format
-      const botMsg = data.reply || 'No response';
-      history.innerHTML += `<div><strong>Agentic AI:</strong> ${botMsg}</div>`;
-      history.scrollTop = history.scrollHeight;
-    } catch (err) {
-      history.innerHTML += `<div style="color:red;"><strong>Error:</strong> Could not connect to chatbot.</div>`;
+    status.textContent = '';
+    result.innerHTML = '';
+    const file = input.files[0];
+    if (!file) {
+      status.textContent = 'Please select an image file.';
+      return;
     }
+    // Show preview of uploaded image
+    const reader = new FileReader();
+    reader.onload = async function(ev) {
+      const base64String = ev.target.result.split(',')[1]; // Remove Data URL prefix
+      preview.src = ev.target.result;
+
+      status.textContent = 'Uploading and processing image...';
+
+      try {
+        // Send base64 image to backend
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: base64String })
+        });
+        const data = await response.json();
+        if (data.image) {
+          // Display the returned processed image
+          result.innerHTML = '<strong>Processed image:</strong><br>' +
+                             '<img src="data:image/png;base64,' + data.image + '" style="max-width:100%;border:1px solid #ccc;">';
+          status.textContent = '';
+        } else {
+          status.textContent = 'No image returned from backend.';
+        }
+      } catch (err) {
+        status.textContent = 'Error processing image: ' + err;
+      }
+    };
+    reader.readAsDataURL(file);
   });
 });
 </script>
+
+<form id="image-form" style="margin-bottom:1em;">
+  <label for="image-input"><strong>Select an image to process:</strong></label><br>
+  <input type="file" id="image-input" accept="image/*" /><br>
+  <button type="submit">Send & Process</button>
+</form>
+<p id="image-status"></p>
+<strong>Original image preview:</strong><br>
+<img id="image-preview" style="max-width:100%;border:1px solid #eee;margin-bottom:1em;">
+<div id="image-result"></div>
 
 *Type your question above to chat with Agentic AI!*
