@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: My Amazing website
+title: Arshia's Homepage
 
 # Your name to show in the footer
-author: Some Person
+author: Arshia Yousefi
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -54,13 +54,13 @@ social-network-links:
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
   facebook: deanattali
   github: ayousefinejad
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
+  # twitter: daattali
+  # patreon: DeanAttali
+  # youtube: "@daattali"
   whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
-#  linkedin: daattali
+ linkedin: arshia-yousefi
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -70,7 +70,7 @@ social-network-links:
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
-#  telegram: yourname
+ telegram: @arshia_yousefi
 #  calendly: yourname
 #  mastodon: instance.url/@username
 #  bluesky: yourname
@@ -102,7 +102,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "https://ayousefinejad.github.io/"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
