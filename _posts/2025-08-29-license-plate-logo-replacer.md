@@ -22,42 +22,58 @@ Let’s make your license plate stand out!
 
 **Upload your logo image and send it to our backend (base64 format):**
 
-<div style="border:2px dashed #bbb; padding:20px; text-align:center; margin-bottom:1em;">
-  <input type="file" id="imageInput" accept="image/*" />
-  <button id="uploadBtn">Convert & Send</button>
-  <p id="status"></p>
-  <textarea id="base64Output" rows="6" style="width:100%;" placeholder="Base64 will appear here..." readonly></textarea>
-</div>
-
 <script>
-document.getElementById('uploadBtn').onclick = function() {
-  const input = document.getElementById('imageInput');
-  const status = document.getElementById('status');
-  const output = document.getElementById('base64Output');
-  if (!input.files || !input.files[0]) {
-    status.textContent = 'Please select an image file.';
-    return;
-  }
-  const file = input.files[0];
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    const base64String = e.target.result.split(',')[1]; // Remove Data URL prefix
-    output.value = base64String; // Show base64 in textarea
-    status.textContent = 'Image converted to Base64. Sending to backend...';
-    // Send to your backend (replace /api/upload with your actual endpoint)
-    fetch('/api/upload', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64String })
-    })
-    .then(response => response.json())
-    .then(data => {
-      status.textContent = 'Image sent successfully!';
-    })
-    .catch(err => {
-      status.textContent = 'Error sending image: ' + err;
-    });
-  };
-  reader.readAsDataURL(file);
-};
+document.addEventListener('DOMContentLoaded', function() {
+  const API_URL = 'https://your-backend-url.com/api/process-image'; // Use your backend URL
+
+  const form = document.getElementById('image-form');
+  const input = document.getElementById('image-input');
+  const status = document.getElementById('image-status');
+  const result = document.getElementById('image-result');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    status.textContent = '';
+    result.innerHTML = '';
+    const file = input.files[0];
+    if (!file) {
+      status.textContent = 'Please select an image file.';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = async function(ev) {
+      const base64String = ev.target.result.split(',')[1]; // Remove Data URL prefix
+      status.textContent = 'Uploading and processing image...';
+      try {
+        // Send base64 image to backend
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: base64String })
+        });
+        const data = await response.json();
+        if (data.image) {
+          // Display the returned processed image visually
+          result.innerHTML =
+            '<strong>Processed image:</strong><br>' +
+            '<img src="data:image/png;base64,' + data.image + '" style="max-width:100%;border:1px solid #ccc;">';
+          status.textContent = '';
+        } else {
+          status.textContent = 'No image returned from backend.';
+        }
+      } catch (err) {
+        status.textContent = 'Error processing image: ' + err;
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+});
 </script>
+
+<form id="image-form" style="margin-bottom:1em;">
+  <label for="image-input"><strong>Select an image to process:</strong></label><br>
+  <input type="file" id="image-input" accept="image/*" /><br>
+  <button type="submit">Send & Process</button>
+</form>
+<p id="image-status"></p>
+<div id="image-result"></div>
