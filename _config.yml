@@ -12,6 +12,8 @@
 # Name of website
 title: Arshia's Homepage
 
+description: Artifical Intelligence Student at Universiy of Tehran
+
 # Your name to show in the footer
 author: Arshia Yousefi
 
@@ -258,7 +260,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Iran/Tehran"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
