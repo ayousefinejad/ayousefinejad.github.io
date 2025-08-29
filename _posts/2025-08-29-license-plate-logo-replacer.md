@@ -23,52 +23,65 @@ Let’s make your license plate stand out!
 **Upload your logo image and send it to our backend (base64 format):**
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const API_URL = 'https://zenpower.info/webhook-test/6872fbd6-b91d-4001-ac3c-da9a13e35069'; // Use your backend URL
+document.addEventListener('DOMContentLoaded', () => {
+  // Use the ACTIVE (production) webhook once the workflow is activated:
+  const API_URL = 'https://zenpower.info/webhook/6872fbd6-b91d-4001-ac3c-da9a13e35069';
 
   const form = document.getElementById('image-form');
   const input = document.getElementById('image-input');
   const status = document.getElementById('image-status');
   const result = document.getElementById('image-result');
 
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     status.textContent = '';
     result.innerHTML = '';
-    const file = input.files[0];
-    if (!file) {
-      status.textContent = 'Please select an image file.';
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = async function(ev) {
-      const base64String = ev.target.result.split(',')[1]; // Remove Data URL prefix
-      status.textContent = 'Uploading and processing image...';
-      try {
-        // Send base64 image to backend
-        const response = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: base64String })
-        });
-        const data = await response.json();
-        if (data.image) {
-          // Display the returned processed image visually
-          result.innerHTML =
-            '<strong>Processed image:</strong><br>' +
-            '<img src="data:image/png;base64,' + data.image + '" style="max-width:100%;border:1px solid #ccc;">';
-          status.textContent = '';
-        } else {
-          status.textContent = 'No image returned from backend.';
-        }
-      } catch (err) {
-        status.textContent = 'Error processing image: ' + err;
+
+    const file = input.files?.[0];
+    if (!file) { status.textContent = 'Please select an image file.'; return; }
+
+    status.textContent = 'Uploading and processing image...';
+
+    try {
+      // Use FormData to avoid JSON + preflight
+      const fd = new FormData();
+      fd.append('image_file', file); // n8n: get it with "Binary" or "Form-Data" field
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        body: fd,              // no Content-Type header -> browser sets multipart/form-data
+      });
+
+      // Try to parse JSON if provided
+      const ct = response.headers.get('content-type') || '';
+      let data = null;
+      if (ct.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        try { data = JSON.parse(text); } catch { /* not JSON */ }
       }
-    };
-    reader.readAsDataURL(file);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status} ${response.statusText}`);
+      }
+
+      if (data && data.image) {
+        result.innerHTML = `
+          <strong>Processed image:</strong><br>
+          <img src="data:image/png;base64,${data.image}" style="max-width:100%;border:1px solid #ccc;">
+        `;
+        status.textContent = '';
+      } else {
+        status.textContent = 'No image returned from backend. Check your n8n Respond node.';
+      }
+    } catch (err) {
+      status.textContent = 'Error processing image: ' + (err?.message || err);
+    }
   });
 });
 </script>
+
 
 <form id="image-form" style="margin-bottom:1em;">
   <label for="image-input"><strong>Select an image to process:</strong></label><br>
