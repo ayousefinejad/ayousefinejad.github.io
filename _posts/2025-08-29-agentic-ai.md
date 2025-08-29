@@ -3,7 +3,6 @@ layout: post
 title: Agentic AI
 subtitle: Exploring the Future of Autonomous Artificial Intelligence
 tags: [AI, agentic, technology, future]
-author: Your Name
 ---
 
 Agentic AI refers to artificial intelligence systems capable of autonomous decision-making, acting on behalf of users or organizations with minimal human intervention. These systems are designed to pursue goals, learn from experience, and adapt to changing environments.
