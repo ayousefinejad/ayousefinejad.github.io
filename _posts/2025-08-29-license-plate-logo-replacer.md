@@ -24,7 +24,7 @@ Let’s make your license plate stand out!
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const API_URL = 'https://your-backend-url.com/api/process-image'; // Use your backend URL
+  const API_URL = 'https://zenpower.info/webhook-test/6872fbd6-b91d-4001-ac3c-da9a13e35069'; // Use your backend URL
 
   const form = document.getElementById('image-form');
   const input = document.getElementById('image-input');
