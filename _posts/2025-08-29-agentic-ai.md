@@ -2,9 +2,6 @@
 layout: post
 title: Agentic AI
 subtitle: Exploring the Future of Autonomous Artificial Intelligence
-cover-img: /assets/img/agentic-ai.jpg
-thumbnail-img: /assets/img/agentic-ai-thumb.png
-share-img: /assets/img/agentic-ai.jpg
 tags: [AI, agentic, technology, future]
 author: Your Name
 ---
