@@ -37,6 +37,8 @@ As agentic AI continues to evolve, collaboration between technologists, ethicist
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const WEBHOOK_URL = 'https://zenpower.info/webhook/6872fbd6-b91d-4001-ac3c-da9a13e35069'; // Use production URL
+
   const form = document.getElementById('chat-form');
   const input = document.getElementById('chat-input');
   const history = document.getElementById('chat-history');
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Call chatbot API
     try {
-      const response = await fetch('https://zenpower.info/webhook-test/6872fbd6-b91d-4001-ac3c-da9a13e35069', {
+      const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg })
