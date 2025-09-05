@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "License Plate Logo Replacer Service"
+title: "Research in Image Background Editing and Generation"
 categories: projects
 cover-img: "/assets/img/license_plate_logo.png"
 tags: [license plate, logo, service]
