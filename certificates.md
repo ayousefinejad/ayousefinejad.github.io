@@ -7,7 +7,9 @@ subtitle:
 
 ## My Certificates
 
-### [TurboTextSpeech NLP & Speech Processing And AI Summer School](https://partdp.ai/en)
+### TurboTextSpeech NLP & Speech Processing And AI Summer School
+[**Part AI Research Center**](https://partdp.ai/en)
+
 *Issued: Jul 2023 (NLP & Speech Processing) | Jun 2021 (AI Summer School)*  
 
 **NLP & Speech Processing:**  
@@ -32,7 +34,7 @@ Completed the Deep Learning Specialization by Andrew Ng, covering neural network
 ---
 
 ### [Machine Learning A-Z](https://www.udemy.com/certificate/UC-a2449951-dcdb-4c0b-9b63-7b44628fe33d/)
-**Coursera**  
+**Udemy**  
 *Issued: Oct 2020*  
 Completed the Machine Learning A-Z course, covering data preprocessing, regression, classification, clustering, association rule learning, reinforcement learning, natural language processing, and deep learning using Python and R.
 
@@ -42,8 +44,9 @@ Completed the Machine Learning A-Z course, covering data preprocessing, regressi
 
 ---
 
-### [Deep Learning Interactive Student](https://deeplearning.neuromatch.io/tutorials/intro.html)
-**Neuromatch**  
+### Deep Learning Interactive Student
+[**Neuromatch**](https://deeplearning.neuromatch.io/tutorials/intro.html)
+
 *Issued: Jul 2022*  
 Passed the Neuromatch Academy Deep Learning course, gaining hands-on experience with neural networks, backpropagation, optimization, convolutional networks, and advanced deep learning concepts through interactive projects and collaborative learning.
 
