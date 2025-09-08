@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Arshia's Homepage
+title: Arshia's Projects
 
 description: Artifical Intelligence Student at Universiy of Tehran
 
@@ -22,7 +22,6 @@ author: Arshia Yousefi
 ###############################################
 
 navbar-links:
-  Projects: "projects"
   About Me: "aboutme"
   Certificates: "certificates"
 
