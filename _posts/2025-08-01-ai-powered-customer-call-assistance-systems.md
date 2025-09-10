@@ -6,7 +6,27 @@ tags: [AI, Speech-Processing, NLP, technology, future]
 ---
 
 
-<video width="640" height="360" controls>
-  <source src="/assets/img/posts/call_assistance/live_call_video.MP4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<style>
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-top: 25px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="responsive-video">
+  <video autoplay muted playsinline controls>
+    <source src="/assets/img/posts/call_assistance/live_call_video.MP4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
