@@ -2,6 +2,7 @@
 layout: post
 title: Development of AI-Powered Customer Call Assistance Systems
 subtitle: Enhancing Customer Engagement Through Automated, Intelligent Voice Solutions
+cover-img: "/assets/img/posts/call_assistance/voice_assitance_cover.png"
 tags: [AI, Speech-Processing, NLP, technology, future]
 ---
 
