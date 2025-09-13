@@ -125,6 +125,36 @@ layout: null
   color: #a0a0a0;
 }
 
+/* Dark mode toggle in navbar */
+#dark-mode-toggle {
+  color: var(--navbar-text-col) !important;
+  transition: all 0.3s ease;
+  border: none !important;
+  background: none !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 1rem;
+}
+
+#dark-mode-toggle:hover,
+#dark-mode-toggle:focus {
+  color: var(--hover-col) !important;
+  background-color: transparent !important;
+  transform: scale(1.1);
+}
+
+#dark-mode-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.3);
+}
+
+#dark-mode-toggle i {
+  transition: transform 0.3s ease;
+}
+
+#dark-mode-toggle:hover i {
+  transform: rotate(15deg);
+}
+
 /* --- General --- */
 
 html {
