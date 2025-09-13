@@ -26,27 +26,27 @@ layout: null
 
 /* Dark mode variables */
 [data-theme="dark"] {
-  --page-col: #1a1a1a;
-  --text-col: #e0e0e0;
-  --link-col: #4a9eff;
-  --hover-col: #66b3ff;
-  --navbar-col: #2d2d2d;
-  --navbar-text-col: #e0e0e0;
-  --navbar-border-col: #404040;
-  --footer-col: #2d2d2d;
-  --footer-text-col: #a0a0a0;
-  --footer-link-col: #e0e0e0;
-  --footer-hover-col: #66b3ff;
-  --mid-col: #a0a0a0;
+  --page-col: #2d2d2d;
+  --text-col: #e8e8e8;
+  --link-col: #5ba3ff;
+  --hover-col: #7bb3ff;
+  --navbar-col: #3a3a3a;
+  --navbar-text-col: #e8e8e8;
+  --navbar-border-col: #4a4a4a;
+  --footer-col: #3a3a3a;
+  --footer-text-col: #b8b8b8;
+  --footer-link-col: #e8e8e8;
+  --footer-hover-col: #7bb3ff;
+  --mid-col: #b8b8b8;
 }
 
 /* Dark mode specific styles */
 [data-theme="dark"] .jumbotron {
-  background: #2d2d2d;
+  background: #3a3a3a;
 }
 
 [data-theme="dark"] .post-preview {
-  border-bottom: 1px solid #404040;
+  border-bottom: 1px solid #4a4a4a;
 }
 
 [data-theme="dark"] table tr {
@@ -54,75 +54,75 @@ layout: null
 }
 
 [data-theme="dark"] table tr:nth-child(2n) {
-  background-color: #2d2d2d;
+  background-color: #3a3a3a;
 }
 
 [data-theme="dark"] table tr th,
 [data-theme="dark"] table tr td {
-  border: 1px solid #404040;
+  border: 1px solid #4a4a4a;
 }
 
 [data-theme="dark"] code {
-  color: #ff6b6b;
-  background-color: #2d2d2d;
+  color: #ff7a7a;
+  background-color: #3a3a3a;
 }
 
 [data-theme="dark"] .highlight > pre {
   background-image: linear-gradient(
-    rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1.5em, rgba(255,255,255,0.02) 1.5em, rgba(255,255,255,0.02) 3em);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-left: 0.4375rem solid #666;
+    rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1.5em, rgba(255,255,255,0.03) 1.5em, rgba(255,255,255,0.03) 3em);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-left: 0.4375rem solid #777;
 }
 
 [data-theme="dark"] .highlight pre.lineno {
-  color: rgba(255,255,255,0.3);
-  border-right: 2px solid #666;
+  color: rgba(255,255,255,0.4);
+  border-right: 2px solid #777;
 }
 
 [data-theme="dark"] .box-note {
-  background-color: #2d2d2d;
-  border-left-color: #4a9eff;
+  background-color: #3a3a3a;
+  border-left-color: #5ba3ff;
 }
 
 [data-theme="dark"] .box-warning {
-  background-color: #3d2d1a;
-  border-left-color: #ffa500;
+  background-color: #4a3a2a;
+  border-left-color: #ffb84d;
 }
 
 [data-theme="dark"] .box-error {
-  background-color: #3d1a1a;
-  border-left-color: #ff6b6b;
+  background-color: #4a2a2a;
+  border-left-color: #ff7a7a;
 }
 
 [data-theme="dark"] .box-success {
-  background-color: #1a3d1a;
-  border-left-color: #4caf50;
+  background-color: #2a4a2a;
+  border-left-color: #5cbf5c;
 }
 
 [data-theme="dark"] .blog-post .caption {
-  color: #a0a0a0;
+  color: #b8b8b8;
 }
 
 [data-theme="dark"] .blog-post blockquote {
-  border-left: 0.3125rem solid #404040;
+  border-left: 0.3125rem solid #4a4a4a;
 }
 
 [data-theme="dark"] #beautifuljekyll-search-overlay {
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,0.9);
 }
 
 [data-theme="dark"] #nav-search-input {
-  background: #2d2d2d;
-  color: #e0e0e0;
+  background: #3a3a3a;
+  color: #e8e8e8;
 }
 
 [data-theme="dark"] #nav-search-input:focus {
-  background: #3d3d3d;
-  box-shadow: 0px 0.15rem 1rem rgba(74, 158, 255, 0.2);
+  background: #4a4a4a;
+  box-shadow: 0px 0.15rem 1rem rgba(91, 163, 255, 0.25);
 }
 
 [data-theme="dark"] #nav-search-input::placeholder {
-  color: #a0a0a0;
+  color: #b8b8b8;
 }
 
 /* Dark mode toggle in navbar */
@@ -133,18 +133,13 @@ layout: null
   background: none !important;
   padding: 0.5rem 0.75rem !important;
   font-size: 1rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
 }
 
 #dark-mode-toggle:hover,
 #dark-mode-toggle:focus {
   color: var(--hover-col) !important;
   background-color: transparent !important;
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.1);
 }
 
 #dark-mode-toggle:focus {
@@ -158,21 +153,6 @@ layout: null
 
 #dark-mode-toggle:hover i {
   transform: rotate(15deg);
-}
-
-/* Responsive adjustments for dark mode toggle */
-@media (max-width: 1199px) {
-  #dark-mode-toggle {
-    position: static;
-    transform: none;
-    margin-left: auto;
-    margin-right: 1rem;
-  }
-  
-  #dark-mode-toggle:hover,
-  #dark-mode-toggle:focus {
-    transform: scale(1.1);
-  }
 }
 
 /* --- General --- */
