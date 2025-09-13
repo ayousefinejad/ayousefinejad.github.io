@@ -38,13 +38,13 @@
           </a>
         </li>
       {%- endif -%}
-      <li class="nav-item">
-        <button id="dark-mode-toggle" class="nav-link btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem;">
-          <i class="fas fa-moon"></i>
-        </button>
-      </li>
     </ul>
   </div>
+
+  <!-- Dark Mode Toggle - Always visible -->
+  <button id="dark-mode-toggle" class="btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col);">
+    <i class="fas fa-moon"></i>
+  </button>
 
   {% if site.navbar-extra %}
     {% for file in site.navbar-extra %}

@@ -133,13 +133,18 @@ layout: null
   background: none !important;
   padding: 0.5rem 0.75rem !important;
   font-size: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
 }
 
 #dark-mode-toggle:hover,
 #dark-mode-toggle:focus {
   color: var(--hover-col) !important;
   background-color: transparent !important;
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 #dark-mode-toggle:focus {
@@ -153,6 +158,21 @@ layout: null
 
 #dark-mode-toggle:hover i {
   transform: rotate(15deg);
+}
+
+/* Responsive adjustments for dark mode toggle */
+@media (max-width: 1199px) {
+  #dark-mode-toggle {
+    position: static;
+    transform: none;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  
+  #dark-mode-toggle:hover,
+  #dark-mode-toggle:focus {
+    transform: scale(1.1);
+  }
 }
 
 /* --- General --- */
@@ -286,6 +306,7 @@ img {
   background-color: var(--navbar-col);
   border-bottom: 1px solid var(--navbar-border-col);
   font-family: var(--header-font);
+  position: relative;
   {% if site.navbar-img %}
     background-image: url({{ site.navbar-img | relative_url }});
     background-attachment: fixed;

@@ -118,19 +118,18 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="position: relative;">
         <div class="container">
             <a class="navbar-brand" href="#">Arshia's Projects</a>
             <div class="navbar-nav ml-auto">
                 <a class="nav-link" href="#">About Me</a>
                 <a class="nav-link" href="#">Certificates</a>
-                <li class="nav-item">
-                    <button id="dark-mode-toggle" class="nav-link btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem;">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
             </div>
         </div>
+        <!-- Dark Mode Toggle - Always visible -->
+        <button id="dark-mode-toggle" class="btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col);">
+            <i class="fas fa-moon"></i>
+        </button>
     </nav>
 
     <!-- Main Content -->
