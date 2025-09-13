@@ -6,6 +6,11 @@
     <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
   {%- endif -%}
 
+  <!-- Dark Mode Toggle - Near the brand -->
+  <button id="dark-mode-toggle" class="btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col); margin-left: 1rem;">
+    <i class="fas fa-moon"></i>
+  </button>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,11 +43,6 @@
           </a>
         </li>
       {%- endif -%}
-      <li class="nav-item">
-        <button id="dark-mode-toggle" class="nav-link btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col);">
-          <i class="fas fa-moon"></i>
-        </button>
-      </li>
     </ul>
   </div>
 

@@ -26,27 +26,27 @@ layout: null
 
 /* Dark mode variables */
 [data-theme="dark"] {
-  --page-col: #2d2d2d;
-  --text-col: #e8e8e8;
+  --page-col: #1D1E20;
+  --text-col: #DADADB;
   --link-col: #5ba3ff;
   --hover-col: #7bb3ff;
-  --navbar-col: #3a3a3a;
-  --navbar-text-col: #e8e8e8;
-  --navbar-border-col: #4a4a4a;
-  --footer-col: #3a3a3a;
-  --footer-text-col: #b8b8b8;
-  --footer-link-col: #e8e8e8;
+  --navbar-col: #2a2b2e;
+  --navbar-text-col: #DADADB;
+  --navbar-border-col: #3a3b3e;
+  --footer-col: #2a2b2e;
+  --footer-text-col: #a0a1a2;
+  --footer-link-col: #DADADB;
   --footer-hover-col: #7bb3ff;
-  --mid-col: #b8b8b8;
+  --mid-col: #a0a1a2;
 }
 
 /* Dark mode specific styles */
 [data-theme="dark"] .jumbotron {
-  background: #3a3a3a;
+  background: #2a2b2e;
 }
 
 [data-theme="dark"] .post-preview {
-  border-bottom: 1px solid #4a4a4a;
+  border-bottom: 1px solid #3a3b3e;
 }
 
 [data-theme="dark"] table tr {
@@ -54,17 +54,17 @@ layout: null
 }
 
 [data-theme="dark"] table tr:nth-child(2n) {
-  background-color: #3a3a3a;
+  background-color: #2a2b2e;
 }
 
 [data-theme="dark"] table tr th,
 [data-theme="dark"] table tr td {
-  border: 1px solid #4a4a4a;
+  border: 1px solid #3a3b3e;
 }
 
 [data-theme="dark"] code {
   color: #ff7a7a;
-  background-color: #3a3a3a;
+  background-color: #2a2b2e;
 }
 
 [data-theme="dark"] .highlight > pre {
@@ -80,49 +80,49 @@ layout: null
 }
 
 [data-theme="dark"] .box-note {
-  background-color: #3a3a3a;
+  background-color: #2a2b2e;
   border-left-color: #5ba3ff;
 }
 
 [data-theme="dark"] .box-warning {
-  background-color: #4a3a2a;
+  background-color: #3a2b1e;
   border-left-color: #ffb84d;
 }
 
 [data-theme="dark"] .box-error {
-  background-color: #4a2a2a;
+  background-color: #3a1e1e;
   border-left-color: #ff7a7a;
 }
 
 [data-theme="dark"] .box-success {
-  background-color: #2a4a2a;
+  background-color: #1e3a1e;
   border-left-color: #5cbf5c;
 }
 
 [data-theme="dark"] .blog-post .caption {
-  color: #b8b8b8;
+  color: #a0a1a2;
 }
 
 [data-theme="dark"] .blog-post blockquote {
-  border-left: 0.3125rem solid #4a4a4a;
+  border-left: 0.3125rem solid #3a3b3e;
 }
 
 [data-theme="dark"] #beautifuljekyll-search-overlay {
-  background: rgba(0,0,0,0.9);
+  background: rgba(29, 30, 32, 0.95);
 }
 
 [data-theme="dark"] #nav-search-input {
-  background: #3a3a3a;
-  color: #e8e8e8;
+  background: #2a2b2e;
+  color: #DADADB;
 }
 
 [data-theme="dark"] #nav-search-input:focus {
-  background: #4a4a4a;
+  background: #3a3b3e;
   box-shadow: 0px 0.15rem 1rem rgba(91, 163, 255, 0.25);
 }
 
 [data-theme="dark"] #nav-search-input::placeholder {
-  color: #b8b8b8;
+  color: #a0a1a2;
 }
 
 /* Dark mode toggle in navbar */
@@ -133,6 +133,9 @@ layout: null
   background: none !important;
   padding: 0.5rem 0.75rem !important;
   font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
 #dark-mode-toggle:hover,
@@ -153,6 +156,14 @@ layout: null
 
 #dark-mode-toggle:hover i {
   transform: rotate(15deg);
+}
+
+/* Responsive adjustments for dark mode toggle near brand */
+@media (max-width: 1199px) {
+  #dark-mode-toggle {
+    margin-left: 0.5rem;
+    padding: 0.4rem 0.6rem !important;
+  }
 }
 
 /* --- General --- */

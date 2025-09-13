@@ -24,18 +24,18 @@
 
         /* Dark mode variables */
         [data-theme="dark"] {
-            --page-col: #2d2d2d;
-            --text-col: #e8e8e8;
+            --page-col: #1D1E20;
+            --text-col: #DADADB;
             --link-col: #5ba3ff;
             --hover-col: #7bb3ff;
-            --navbar-col: #3a3a3a;
-            --navbar-text-col: #e8e8e8;
-            --navbar-border-col: #4a4a4a;
-            --footer-col: #3a3a3a;
-            --footer-text-col: #b8b8b8;
-            --footer-link-col: #e8e8e8;
+            --navbar-col: #2a2b2e;
+            --navbar-text-col: #DADADB;
+            --navbar-border-col: #3a3b3e;
+            --footer-col: #2a2b2e;
+            --footer-text-col: #a0a1a2;
+            --footer-link-col: #DADADB;
             --footer-hover-col: #7bb3ff;
-            --mid-col: #b8b8b8;
+            --mid-col: #a0a1a2;
         }
 
         body {
@@ -82,7 +82,7 @@
 
         [data-theme="dark"] code {
             color: #ff7a7a;
-            background-color: #3a3a3a;
+            background-color: #2a2b2e;
         }
 
         /* Dark mode toggle in navbar */
@@ -121,6 +121,10 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">Arshia's Projects</a>
+            <!-- Dark Mode Toggle - Near the brand -->
+            <button id="dark-mode-toggle" class="btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col); margin-left: 1rem;">
+                <i class="fas fa-moon"></i>
+            </button>
             <div class="navbar-nav ml-auto">
                 <a class="nav-link" href="#">About Me</a>
                 <a class="nav-link" href="#">Certificates</a>
@@ -128,11 +132,6 @@
                     <a class="nav-link" href="#" title="Search">
                         <i class="fa fa-search"></i>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <button id="dark-mode-toggle" class="nav-link btn btn-link" type="button" title="Switch to dark mode" style="border: none; background: none; padding: 0.5rem 0.75rem; color: var(--navbar-text-col);">
-                        <i class="fas fa-moon"></i>
-                    </button>
                 </li>
             </div>
         </div>
