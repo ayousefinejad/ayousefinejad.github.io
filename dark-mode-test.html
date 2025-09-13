@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Test</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --page-col: #FFFFFF;
+            --text-col: #404040;
+            --link-col: #008AFF;
+            --hover-col: #0085A1;
+            --navbar-col: #EAEAEA;
+            --navbar-text-col: #404040;
+            --navbar-border-col: #DDDDDD;
+            --footer-col: #EAEAEA;
+            --footer-text-col: #777777;
+            --footer-link-col: #404040;
+            --footer-hover-col: #0085A1;
+            --mid-col: #808080;
+        }
+
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --page-col: #1a1a1a;
+            --text-col: #e0e0e0;
+            --link-col: #4a9eff;
+            --hover-col: #66b3ff;
+            --navbar-col: #2d2d2d;
+            --navbar-text-col: #e0e0e0;
+            --navbar-border-col: #404040;
+            --footer-col: #2d2d2d;
+            --footer-text-col: #a0a0a0;
+            --footer-link-col: #e0e0e0;
+            --footer-hover-col: #66b3ff;
+            --mid-col: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--page-col);
+            color: var(--text-col);
+            font-family: 'Lora', 'Times New Roman', serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar {
+            background-color: var(--navbar-col);
+            border-bottom: 1px solid var(--navbar-border-col);
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: var(--navbar-text-col);
+        }
+
+        .navbar-brand:hover, .navbar-nav .nav-link:hover {
+            color: var(--hover-col);
+        }
+
+        .card {
+            background-color: var(--page-col);
+            border: 1px solid var(--navbar-border-col);
+        }
+
+        .btn-primary {
+            background-color: var(--link-col);
+            border-color: var(--link-col);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--hover-col);
+            border-color: var(--hover-col);
+        }
+
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        [data-theme="dark"] code {
+            color: #ff6b6b;
+            background-color: #2d2d2d;
+        }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--page-col);
+            border: 1px solid var(--navbar-border-col);
+            color: var(--text-col);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: var(--hover-col);
+            color: var(--page-col);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] #dark-mode-toggle {
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] #dark-mode-toggle:hover {
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="btn btn-outline-secondary btn-sm" type="button" title="Switch to dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Arshia's Projects</a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#">About Me</a>
+                <a class="nav-link" href="#">Certificates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>Dark Mode Test Page</h1>
+                <p class="lead">This page demonstrates the dark mode functionality for your Jekyll blog.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Sample Blog Post</h5>
+                        <p class="card-text">This is a sample blog post content to show how the dark mode affects different elements like text, cards, and other components.</p>
+                        <p class="card-text">Here's some <code>inline code</code> to demonstrate how code blocks look in both light and dark modes.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Another Post</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"This is a blockquote to show how it appears in dark mode."</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sidebar</h5>
+                        <p class="card-text">This sidebar demonstrates how the dark mode affects different sections of your blog.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: var(--page-col); color: var(--text-col); border-color: var(--navbar-border-col);">Recent Posts</li>
+                            <li class="list-group-item" style="background-color: var(--page-col); color: var(--text-col); border-color: var(--navbar-border-col);">Categories</li>
+                            <li class="list-group-item" style="background-color: var(--page-col); color: var(--text-col); border-color: var(--navbar-border-col);">Tags</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4" style="background-color: var(--footer-col); border-top: 1px solid var(--navbar-border-col);">
+        <div class="container text-center">
+            <p style="color: var(--footer-text-col); margin: 0;">© 2024 Arshia Yousefi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        (function() {
+            'use strict';
+
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            // Apply the theme immediately to prevent flash
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Dark mode toggle function
+            function toggleDarkMode() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                // Update the theme
+                document.documentElement.setAttribute('data-theme', newTheme);
+                
+                // Save the preference
+                localStorage.setItem('theme', newTheme);
+                
+                // Update the toggle button icon
+                updateToggleIcon(newTheme);
+            }
+
+            // Update the toggle button icon based on current theme
+            function updateToggleIcon(theme) {
+                const toggleButton = document.getElementById('dark-mode-toggle');
+                if (toggleButton) {
+                    const icon = toggleButton.querySelector('i');
+                    if (icon) {
+                        if (theme === 'dark') {
+                            icon.className = 'fas fa-sun';
+                            toggleButton.setAttribute('title', 'Switch to light mode');
+                        } else {
+                            icon.className = 'fas fa-moon';
+                            toggleButton.setAttribute('title', 'Switch to dark mode');
+                        }
+                    }
+                }
+            }
+
+            // Initialize the toggle button when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleButton = document.getElementById('dark-mode-toggle');
+                if (toggleButton) {
+                    toggleButton.addEventListener('click', toggleDarkMode);
+                    
+                    // Set initial icon state
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    updateToggleIcon(currentTheme);
+                }
+            });
+
+            // Listen for system theme changes
+            if (window.matchMedia) {
+                const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                
+                // Only apply system preference if no user preference is saved
+                if (!localStorage.getItem('theme')) {
+                    mediaQuery.addListener(function(e) {
+                        const newTheme = e.matches ? 'dark' : 'light';
+                        document.documentElement.setAttribute('data-theme', newTheme);
+                        updateToggleIcon(newTheme);
+                    });
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

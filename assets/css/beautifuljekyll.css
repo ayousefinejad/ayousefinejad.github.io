@@ -24,6 +24,107 @@ layout: null
   --mid-col: #808080;
 }
 
+/* Dark mode variables */
+[data-theme="dark"] {
+  --page-col: #1a1a1a;
+  --text-col: #e0e0e0;
+  --link-col: #4a9eff;
+  --hover-col: #66b3ff;
+  --navbar-col: #2d2d2d;
+  --navbar-text-col: #e0e0e0;
+  --navbar-border-col: #404040;
+  --footer-col: #2d2d2d;
+  --footer-text-col: #a0a0a0;
+  --footer-link-col: #e0e0e0;
+  --footer-hover-col: #66b3ff;
+  --mid-col: #a0a0a0;
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .jumbotron {
+  background: #2d2d2d;
+}
+
+[data-theme="dark"] .post-preview {
+  border-bottom: 1px solid #404040;
+}
+
+[data-theme="dark"] table tr {
+  background-color: var(--page-col);
+}
+
+[data-theme="dark"] table tr:nth-child(2n) {
+  background-color: #2d2d2d;
+}
+
+[data-theme="dark"] table tr th,
+[data-theme="dark"] table tr td {
+  border: 1px solid #404040;
+}
+
+[data-theme="dark"] code {
+  color: #ff6b6b;
+  background-color: #2d2d2d;
+}
+
+[data-theme="dark"] .highlight > pre {
+  background-image: linear-gradient(
+    rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1.5em, rgba(255,255,255,0.02) 1.5em, rgba(255,255,255,0.02) 3em);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 0.4375rem solid #666;
+}
+
+[data-theme="dark"] .highlight pre.lineno {
+  color: rgba(255,255,255,0.3);
+  border-right: 2px solid #666;
+}
+
+[data-theme="dark"] .box-note {
+  background-color: #2d2d2d;
+  border-left-color: #4a9eff;
+}
+
+[data-theme="dark"] .box-warning {
+  background-color: #3d2d1a;
+  border-left-color: #ffa500;
+}
+
+[data-theme="dark"] .box-error {
+  background-color: #3d1a1a;
+  border-left-color: #ff6b6b;
+}
+
+[data-theme="dark"] .box-success {
+  background-color: #1a3d1a;
+  border-left-color: #4caf50;
+}
+
+[data-theme="dark"] .blog-post .caption {
+  color: #a0a0a0;
+}
+
+[data-theme="dark"] .blog-post blockquote {
+  border-left: 0.3125rem solid #404040;
+}
+
+[data-theme="dark"] #beautifuljekyll-search-overlay {
+  background: rgba(0,0,0,0.95);
+}
+
+[data-theme="dark"] #nav-search-input {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] #nav-search-input:focus {
+  background: #3d3d3d;
+  box-shadow: 0px 0.15rem 1rem rgba(74, 158, 255, 0.2);
+}
+
+[data-theme="dark"] #nav-search-input::placeholder {
+  color: #a0a0a0;
+}
+
 /* --- General --- */
 
 html {
