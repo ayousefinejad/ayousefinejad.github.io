@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Artifical Intelligence Student at Universiy of Tehran
+subtitle: Artificial Intelligence Student at Universiy of Tehran
 ---
 
 <!-- ![Arshia image]() -->
