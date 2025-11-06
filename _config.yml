@@ -300,6 +300,10 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - vendor/
+  - dark-mode-test.html
+  - page2
+  - SEO_SETUP.md
 
 plugins:
   - jekyll-paginate
