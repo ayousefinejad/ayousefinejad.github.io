@@ -9,10 +9,14 @@
 # --- Required options --- #
 ############################
 
+# Site URL for SEO (required for proper canonical URLs and sitemap)
+url: "https://ayousefinejad.github.io"
+baseurl: ""
+
 # Name of website
 title: Arshia's Projects
 
-description: Artifical Intelligence Student at Universiy of Tehran
+description: Artificial Intelligence Student at Universiy of Tehran
 
 # Your name to show in the footer
 author: Arshia Yousefi
@@ -129,7 +133,7 @@ edit_page_button: false
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "Arshia Yousefi, Artificial Intelligence, Machine Learning, University of Tehran, Medical Image Segmentation, Computer Vision, Natural Language Processing, Recommender Systems, AI Research, Multi-Modal Learning, Agentic AI, Speech Processing, Medical Image Analysis, Knowledge Distillation, Model Compression, OCR, Document Analysis, Face Anti-Spoofing, Emotion Detection"
 
 ######################################
 # --- Colours / background image --- #
