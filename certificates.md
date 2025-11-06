@@ -10,7 +10,7 @@ subtitle:
 ### TurboTextSpeech NLP & Speech Processing And AI Summer School
 [**Part AI Research Center**](https://partdp.ai/en)
 
-*Issued: Jul 2023 (NLP & Speech Processing) | Jun 2021 (AI Summer School)*  
+*Issued: Jul 2023 (NLP & Speech Processing) & Jun 2021 (AI Summer School)*  
 
 **NLP & Speech Processing:**  
 Engaged with trending concepts in Natural Language Processing and Speech Processing. Gained foundational knowledge in NLP, including n-gram models and Transformer architectures, and learned to apply Hugging Face models. Explored key speech processing techniques and their applications.
